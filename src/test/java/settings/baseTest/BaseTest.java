@@ -13,27 +13,27 @@ import settings.helpers.Attach;
 public class BaseTest {
 
 
-
     @BeforeAll
     public static void initMethod() throws Exception {
         TestConfig testConfig = new TestConfig();
+        if (System.getProperty("sys").equals("web")) {
             Selenide.open();
+        }
 
-
-        if (System.getProperty("sys").equals("mobile")){
+        if (System.getProperty("sys").equals("mobile")) {
             Configuration.browserSize = null;
         }
     }
 
     @BeforeEach
     void addListener() {
+        Selenide.open();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     @BeforeEach
     void deleteCockshies() {
-        Selenide.open();
-        if (System.getProperty("sys").equals("web")){
+        if (System.getProperty("sys").equals("web")) {
             Selenide.clearBrowserCookies();
         }
     }
@@ -42,8 +42,13 @@ public class BaseTest {
     void closeSession() {
 
         Attach.screenshotAs("screenShot");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
+        if (System.getProperty("sys").equals("web")) {
+            Attach.pageSource();
+            Attach.browserConsoleLogs();
+        }
+        if (System.getProperty("sys").equals("mobile")) {
+            Selenide.closeWebDriver();
+        }
         if (System.getProperty("env").equals("local")) {
             Attach.addVideo();
         }
