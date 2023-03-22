@@ -7,7 +7,7 @@ import org.aeonbits.owner.Config;
         "system:properties",
         "classpath:${env}.properties"
 })
-public interface DesktopConfig extends Config {
+public interface DesktopConfig extends Config, CredentialConfig{
 
     @Key("setting.baseUrl")
     String getBaseUrl();

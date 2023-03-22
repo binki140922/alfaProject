@@ -18,7 +18,7 @@ public class MainPage extends BaseTest {
 
     @Step("Открываем главную страницу")
     public MainPage openMainPage() {
-        TestUtil.openPage(TestConfig.getBaseUrl());
+        TestUtil.openPage(TestConfig.getBaseUrlWeb());
         return this;
     }
 
@@ -54,7 +54,7 @@ public class MainPage extends BaseTest {
 
     @Step("Проверяем верность переадресации")
     public void checkOpenUrl(String fullUrl) {
-        TestUtil.checkUrlPage(TestConfig.getBaseUrl() + fullUrl);
+        TestUtil.checkUrlPage(TestConfig.getBaseUrlWeb() + fullUrl);
     }
 
     @Step("Проверяем видимость элемента")

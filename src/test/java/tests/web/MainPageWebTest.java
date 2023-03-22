@@ -10,8 +10,8 @@ import settings.baseTest.BaseTest;
 import settings.data.HeaderDLData;
 import settings.pages.MainPage;
 
-@Tag("desktop")
-public class MainPageDesktopTest extends BaseTest {
+@Tags(value = {@Tag("web"), @Tag("gui")})
+public class MainPageWebTest extends BaseTest {
 
     MainPage mainPage = new MainPage();
 
