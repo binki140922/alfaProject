@@ -61,7 +61,7 @@ tasks.register('localTest', Test) {
     System.setProperty("sys", "web")
     systemProperties(System.getProperties())
     useJUnitPlatform {
-        includeTags("gui")
+        includeTags("front")
         exclude("api")
     }
 }
@@ -71,7 +71,7 @@ tasks.register('selenideTest', Test) {
     System.setProperty("sys", "web")
     systemProperties(System.getProperties())
     useJUnitPlatform {
-        includeTags("gui")
+        includeTags("front")
         exclude("api")
     }
 }
@@ -82,7 +82,7 @@ tasks.register('apiTest', Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags("api")
-        exclude("gui")
+        exclude("front")
     }
 }
 
@@ -91,7 +91,7 @@ tasks.register('emulationTest', Test) {
     System.setProperty("sys", "mobile")
     systemProperties(System.getProperties())
     useJUnitPlatform {
-        includeTags("android")
+        includeTags("mobile")
     }
 }
 tasks.register('browserstackTest', Test) {
@@ -99,7 +99,7 @@ tasks.register('browserstackTest', Test) {
     System.setProperty("sys", "mobile")
     systemProperties(System.getProperties())
     useJUnitPlatform {
-        includeTags("browserstack")
+        includeTags("mobile")
     }
 }
 tasks.register('realTest', Test) {
@@ -107,6 +107,6 @@ tasks.register('realTest', Test) {
     System.setProperty("sys", "mobile")
     systemProperties(System.getProperties())
     useJUnitPlatform {
-        includeTags("android")
+        includeTags("mobile")
     }
 }

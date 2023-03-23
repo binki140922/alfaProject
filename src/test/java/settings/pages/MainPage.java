@@ -5,7 +5,7 @@ import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import settings.baseTest.BaseTest;
+import settings.basetest.BaseTest;
 import settings.configs.TestConfig;
 import settings.pages.components.HeaderDesktopLayout;
 import util.TestUtil;

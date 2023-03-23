@@ -1,6 +1,7 @@
 package settings.configs;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import lombok.Getter;
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.ConfigFactory;
@@ -86,39 +87,61 @@ public class TestConfig {
             browserWeb = ((DesktopConfig) CONFIG).getBrowser();
             browserVersionWeb = ((DesktopConfig) CONFIG).getBrowserVersion();
             browserSizeWeb = ((DesktopConfig) CONFIG).getBrowserSize();
-            remoteWeb = "https://" + ((CredentialConfig) CONFIG).getSelenideLogin() + ":" +
+            remoteWeb = "https://" +
+                    ((CredentialConfig) CONFIG).getSelenideLogin() + ":" +
                     ((CredentialConfig) CONFIG).getSelenidePassword() + "@" +
                     ((DesktopConfig) CONFIG).getRemote();
             remoteUrlVideoWeb = ((DesktopConfig) CONFIG).getRemoteUrlVideo();
-            if (ENV.equals("local")) {
-                LocalDriver.init();
-            } else if (ENV.equals("selenide")) {
-                RemoteDriver.init();
-            } else {
-                throw new Exception("Не верный тип окружения");
+
+            switch (ENV) {
+                case "local": {
+                    LocalDriver.init();
+                    break;
+                }
+                case "selenide": {
+                    RemoteDriver.init();
+                    break;
+                }
+                default: {
+                    throw new Exception("Не верный тип окружения");
+                }
             }
+
+            Selenide.open();
+
         } else if (SYS.equals("mobile")) {
-            if (ENV.equals("browserstack")) {
-                userPasswordMobile = ((CredentialConfig) CONFIG).getBrowserStackPassword();
-                loginMobile = ((CredentialConfig) CONFIG).getBrowserStackLogin();
-                urlApplicationBrowserstackMobile = ((BrowserStackMobileConfig) CONFIG).getUrlApplicationBrowserstack();
-                urlBrowserstackMobile = ((BrowserStackMobileConfig) CONFIG).getUrlBrowserstack();
-                deviceMobile = ((BrowserStackMobileConfig) CONFIG).getDevice();
-                osVersionMobile = ((BrowserStackMobileConfig) CONFIG).getOsVersion();
-                projectMobile = ((BrowserStackMobileConfig) CONFIG).getProject();
-                buildNumberMobile = ((BrowserStackMobileConfig) CONFIG).getBuildNumber();
-                buildNameMobile = ((BrowserStackMobileConfig) CONFIG).getBuildName();
-                Configuration.browser = BrowserstackMobileDriver.class.getName();
-            } else if (ENV.equals("emulation") || ENV.equals("real")) {
-                hostMobile = ((MobileConfig) CONFIG).getHost();
-                deviceMobile = ((MobileConfig) CONFIG).getDevice();
-                osVersionMobile = ((MobileConfig) CONFIG).getOsVersion();
-                appPackageMobile = ((MobileConfig) CONFIG).getAppPackage();
-                appActivityMobile = ((MobileConfig) CONFIG).getAppActivity();
-                Configuration.browser = LocalMobileDriver.class.getName();
-            } else {
-                throw new Exception("Не верный тип окружения");
+
+            switch (ENV) {
+                case "browserstack": {
+                    userPasswordMobile = ((CredentialConfig) CONFIG).getBrowserStackPassword();
+                    loginMobile = ((CredentialConfig) CONFIG).getBrowserStackLogin();
+                    urlApplicationBrowserstackMobile = ((BrowserStackMobileConfig) CONFIG).getUrlApplicationBrowserstack();
+                    urlBrowserstackMobile = ((BrowserStackMobileConfig) CONFIG).getUrlBrowserstack();
+                    deviceMobile = ((BrowserStackMobileConfig) CONFIG).getDevice();
+                    osVersionMobile = ((BrowserStackMobileConfig) CONFIG).getOsVersion();
+                    projectMobile = ((BrowserStackMobileConfig) CONFIG).getProject();
+                    buildNumberMobile = ((BrowserStackMobileConfig) CONFIG).getBuildNumber();
+                    buildNameMobile = ((BrowserStackMobileConfig) CONFIG).getBuildName();
+                    Configuration.browser = BrowserstackMobileDriver.class.getName();
+                    break;
+                }
+                case "emulation":
+                case "real": {
+                    hostMobile = ((MobileConfig) CONFIG).getHost();
+                    deviceMobile = ((MobileConfig) CONFIG).getDevice();
+                    osVersionMobile = ((MobileConfig) CONFIG).getOsVersion();
+                    appPackageMobile = ((MobileConfig) CONFIG).getAppPackage();
+                    appActivityMobile = ((MobileConfig) CONFIG).getAppActivity();
+                    Configuration.browser = LocalMobileDriver.class.getName();
+                    break;
+                }
+                default: {
+                    throw new Exception("Не верный тип окружения");
+                }
             }
+
+            Configuration.browserSize = null;
+
         } else {
             throw new Exception("Не верный тип системы");
         }

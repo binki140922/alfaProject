@@ -1,52 +1,70 @@
 package tests.mobile;
 
-import com.codeborne.selenide.Selenide;
-import io.appium.java_client.AppiumBy;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import jdk.jfr.Label;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-import settings.baseTest.BaseTest;
-
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static io.qameta.allure.Allure.step;
+import settings.basetest.BaseTest;
+import settings.mobilesteps.MobileSteps;
 
 @Tag("mobile")
+@Epic("mobile")
+@Label("android")
+@DisplayName("Альфабанк тесты android приложения")
 public class MobileTests extends BaseTest {
 
-    @Tag("android")
+    private final MobileSteps mobileSteps = new MobileSteps();
+
     @Test
+    @Tags(value = {@Tag("regress"), @Tag("smoke")})
+    @Story("Не зарегистрированный пользователь")
+    @Feature("Негативный сценарии")
+    @DisplayName("Ввод пустого НТ")
     public void firstInstallOpenTest() {
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/button_text")).click();
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/text_view_component_title_view"))
-                .shouldBe(text("Привет! Введите телефон и заходите скорее \uD83D\uDC4C"));
+
+        mobileSteps.clickButtonLogin()
+                .checkLayout("Привет! Введите телефон и заходите скорее \uD83D\uDC4C");
     }
 
-    @Tag("android")
     @Test
+    @Tags(value = {@Tag("regress"), @Tag("sanity")})
+    @Story("Не зарегистрированный пользователь")
+    @Feature("Позитивный сценарии")
+    @DisplayName("Ввод нового НТ")
     public void numberSetTest() {
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/text_field_input")).sendKeys("9999999999");
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/button_container")).click();
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/text_view_component_title_view")).shouldBe(text("Вот что обычно берут новички \uD83D\uDC47"));
+
+        mobileSteps.setPhoneNumber("9999999999")
+                .clickButtonLogin()
+                .checkLayout("Вот что обычно берут новички \uD83D\uDC47");
     }
 
-    @Tag("android")
     @Test
+    @Tags(value = {@Tag("regress"), @Tag("sanity")})
+    @Story("Не зарегистрированный пользователь")
+    @Feature("Позитивный сценарии")
+    @DisplayName("Переход на описание карты")
     public void clickToCardFormTest() {
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/text_field_input")).sendKeys("9999999999");
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/button_container")).click();
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/ad_card_view")).click();
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/text_view_component_title_view"))
-                .shouldBe(text("Бесплатная дебетовая Альфа‑Карта"));
+
+        mobileSteps.setPhoneNumber("9999999999")
+                .clickButtonLogin()
+                .clickBlockCard()
+                .checkLayout("Бесплатная дебетовая Альфа‑Карта");
     }
 
-    @Tags(value = {@Tag("android"), @Tag("browserstack")})
     @Test
+    @Tags(value = {@Tag("regress"), @Tag("sanity")})
+    @Story("Не зарегистрированный пользователь")
+    @Feature("Позитивный сценарии")
+    @DisplayName("Переход на оформление карты")
     public void clickToCardFormButtonTest() {
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/text_field_input")).sendKeys("9999999999");
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/button_container")).click();
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/button_text")).click();
-        Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/text_view_component_title_view"))
-                .shouldBe(text("Представьтесь, пожалуйста! Пишите как в паспорте ✍️"));
+
+        mobileSteps.setPhoneNumber("9999999999")
+                .clickButtonLogin()
+                .clickButtonBlockCard()
+                .checkLayout("Представьтесь, пожалуйста! Пишите как в паспорте ✍️");
     }
 }

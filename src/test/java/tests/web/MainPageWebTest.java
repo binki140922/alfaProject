@@ -1,24 +1,33 @@
 package tests.web;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import jdk.jfr.Label;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
-import settings.baseTest.BaseTest;
+import settings.basetest.BaseTest;
 import settings.data.HeaderDLData;
 import settings.pages.MainPage;
 
-@Tags(value = {@Tag("web"), @Tag("gui")})
+@Tags(value = {@Tag("web"), @Tag("front")})
+@Epic("web")
+@Label("front")
+@DisplayName("Альфабанк тесты Главной страницы")
 public class MainPageWebTest extends BaseTest {
 
-    MainPage mainPage = new MainPage();
+    private final MainPage mainPage = new MainPage();
 
+    @ParameterizedTest(name = "{index}. Проверка хедера - {0}")
     @Tags(value = {@Tag("regress"), @Tag("sanity")})
+    @Story("Проверка переходов")
+    @Feature("Позитивный сценарии")
     @DisplayName("Проверка хедеров")
     @EnumSource(value = HeaderDLData.class, mode = EnumSource.Mode.INCLUDE)
-    @ParameterizedTest(name = "{index}. Проверка хедера - {0}")
     public void checkHeaderDesktopLayout(HeaderDLData data) {
 
         mainPage.openMainPage()
@@ -26,19 +35,23 @@ public class MainPageWebTest extends BaseTest {
                 .checkOpenUrl(data.getLinkUrl());
     }
 
-    @Tag("regress")
-    @DisplayName("Проверка кнопки Альфа-Онлайн")
     @Test
+    @Tag("regress")
+    @Story("Проверка переходов")
+    @Feature("Негативный сценарии")
+    @DisplayName("Проверка кнопки Альфа-Онлайн")
     public void checkButtonAlfaOnline() {
 
         mainPage.openMainPage()
                 .findAndClickText("Альфа-Онлайн")
                 .checkVisibleElement("войти в Альфа-Онлайн?");
     }
-
-    @Tag("regress")
-    @DisplayName("Проверка кнопки СТАТЬ КЛИЕНТОМ")
+    
     @Test
+    @Tag("regress")
+    @Story("Проверка переходов")
+    @Feature("Негативный сценарии")
+    @DisplayName("Проверка кнопки СТАТЬ КЛИЕНТОМ")
     public void mortgageLayoutTest() {
 
         mainPage.openMainPage()
@@ -48,21 +61,25 @@ public class MainPageWebTest extends BaseTest {
                 .checkVisibleElement("Узнайте лимит по ипотеке");
     }
 
-    @Tag("regress")
-    @DisplayName("Проверка поисковой выдачи по запросу - ипотека")
     @Test
-    public void mortgageFaindTest() {
+    @Tag("regress")
+    @Story("Проверка переходов")
+    @Feature("Негативный сценарии")
+    @DisplayName("Проверка поисковой выдачи по запросу - ипотека")
+    public void mortgageFindTest() {
 
         mainPage.openMainPage()
                 .findAttributElement("placeholder", "Я ищу")
-        .setText("ипотека")
+                .setText("ипотека")
                 .checkOneResultFaind(" — Оформить заявку онлайн на ипотечный кредит...");
-}
-
-    @Tags(value = {@Tag("regress"), @Tag("smoke")})
-    @DisplayName("Проверка перехода через логотип")
+    }
+    
     @Test
-    public void calculatedTest() {
+    @Tags(value = {@Tag("regress"), @Tag("smoke")})
+    @Story("Проверка переходов")
+    @Feature("Негативный сценарии")
+    @DisplayName("Проверка перехода через логотип")
+    public void clickLogoTest() {
 
         mainPage.openMainPage()
                 .findAndClickAttributElement("data-test-id", "Main-Header-Main-DesktopLogo")
