@@ -3,6 +3,7 @@ package tests.mobile;
 import com.codeborne.selenide.Selenide;
 import io.appium.java_client.AppiumBy;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import settings.baseTest.BaseTest;
 
@@ -39,7 +40,7 @@ public class MobileTests extends BaseTest {
                 .shouldBe(text("Бесплатная дебетовая Альфа‑Карта"));
     }
 
-    @Tag("android")
+    @Tags(value = {@Tag("android"), @Tag("browserstack")})
     @Test
     public void clickToCardFormButtonTest() {
         Selenide.$(AppiumBy.id("ru.alfabank.mobile.android:id/text_field_input")).sendKeys("9999999999");

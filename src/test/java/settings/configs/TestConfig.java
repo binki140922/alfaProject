@@ -77,7 +77,6 @@ public class TestConfig {
                 throw new Exception("Не верное окружение");
             }
         }
-        this.init();
     }
 
     public void init() throws Exception {
@@ -109,7 +108,7 @@ public class TestConfig {
                 projectMobile = ((BrowserStackMobileConfig) CONFIG).getProject();
                 buildNumberMobile = ((BrowserStackMobileConfig) CONFIG).getBuildNumber();
                 buildNameMobile = ((BrowserStackMobileConfig) CONFIG).getBuildName();
-                Configuration.browser = BrowserStackMobileConfig.class.getName();
+                Configuration.browser = BrowserstackMobileDriver.class.getName();
             } else if (ENV.equals("emulation") || ENV.equals("real")) {
                 hostMobile = ((MobileConfig) CONFIG).getHost();
                 deviceMobile = ((MobileConfig) CONFIG).getDevice();
