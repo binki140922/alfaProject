@@ -99,7 +99,7 @@ tasks.register('browserstackTest', Test) {
     System.setProperty("sys", "mobile")
     systemProperties(System.getProperties())
     useJUnitPlatform {
-        includeTags("mobile")
+        includeTags("browserstackTest")
     }
 }
 tasks.register('realTest', Test) {
