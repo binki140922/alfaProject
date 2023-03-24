@@ -84,9 +84,9 @@ gradle clean apiTest
 ## <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/><a name="Jenkins">Jenkins</a><a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_alfa/"> job</a>
 Параметры сборки в Jenkins:
 
-- <code>TYPETEST</code> выбор типа тестов, из CI доступны:\
-  - browserstackTest\
-  - selenideTest\
+- <code>TYPETEST</code> выбор типа тестов, из CI доступны:
+  - browserstackTest
+  - selenideTest
   - apiTest
 
 #### Доп параметры для команды - selenideTest
@@ -98,7 +98,7 @@ gradle clean apiTest
 
 [Вернуться к оглавлению](#Содержание)
 
-## :bookmark: Allure отчеты:
+## <img src="/images/logos/report.png" width="25" height="25"  alt="report"/>Allure отчеты:
 ### <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure"/>Отчет в Allure</a> <a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_fast/allure/"> report</a>
 #### Основной отчет
 <p align="center">
@@ -148,7 +148,8 @@ gradle clean apiTest
 ## :bookmark: <img src="/images/logos/Selenoid.svg" width="25" height="25" alt="Selenoid"/>Selenoid видеозапись тестов</a>
 ### Видео запись прохождения тестов
 <p align="center">
-  <img title="Selenoid video for test4" src="/images/gif/video.gif">
+  <img title="Selenoid video for test4" src="/images/gif/videoWeb.gif">
+  <img title="Selenoid video for test4" src="/images/gif/vidoMobile.gif">
 </p>
 
 [Вернуться к оглавлению](#Содержание)
