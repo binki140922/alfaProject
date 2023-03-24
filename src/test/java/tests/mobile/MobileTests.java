@@ -20,7 +20,7 @@ public class MobileTests extends BaseTest {
     private final MobileSteps mobileSteps = new MobileSteps();
 
     @Test
-    @Tags(value = {@Tag("regress"), @Tag("smoke"), @Tag("browserstackTest")})
+    @Tags(value = {@Tag("regress"), @Tag("smoke")})
     @Story("Не зарегистрированный пользователь")
     @Feature("Негативный сценарии")
     @DisplayName("Ввод пустого НТ")

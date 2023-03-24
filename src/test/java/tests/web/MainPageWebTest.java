@@ -22,11 +22,10 @@ public class MainPageWebTest extends BaseTest {
 
     private final MainPage mainPage = new MainPage();
 
-    @ParameterizedTest(name = "{index}. Проверка хедера - {0}")
+    @ParameterizedTest(name = "Проверка редиректа хедера - {0}")
     @Tags(value = {@Tag("regress"), @Tag("sanity")})
     @Story("Проверка переходов")
     @Feature("Позитивный сценарии")
-    @DisplayName("Проверка хедеров")
     @EnumSource(value = HeaderDLData.class, mode = EnumSource.Mode.INCLUDE)
     public void checkHeaderDesktopLayout(HeaderDLData data) {
 
@@ -56,7 +55,7 @@ public class MainPageWebTest extends BaseTest {
 
         mainPage.openMainPage()
                 .findAndClickText("СТАТЬ КЛИЕНТОМ")
-                .findAttributElement("data-test-id", "layout")
+                .findAttributElement("карточку - ипотека" ,"data-test-id", "layout")
                 .findAndClickText("Ипотека")
                 .checkVisibleElement("Узнайте лимит по ипотеке");
     }
@@ -69,7 +68,7 @@ public class MainPageWebTest extends BaseTest {
     public void mortgageFindTest() {
 
         mainPage.openMainPage()
-                .findAttributElement("placeholder", "Я ищу")
+                .findAttributElement("строку поиска", "placeholder", "Я ищу")
                 .setText("ипотека")
                 .checkOneResultFaind(" — Оформить заявку онлайн на ипотечный кредит...");
     }
@@ -82,7 +81,7 @@ public class MainPageWebTest extends BaseTest {
     public void clickLogoTest() {
 
         mainPage.openMainPage()
-                .findAndClickAttributElement("data-test-id", "Main-Header-Main-DesktopLogo")
+                .findAndClickAttributElement("логотипу","data-test-id", "Main-Header-Main-DesktopLogo")
                 .checkOpenUrl("");
     }
 }

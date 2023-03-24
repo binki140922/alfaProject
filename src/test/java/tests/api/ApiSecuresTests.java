@@ -22,7 +22,7 @@ import static settings.specs.LoginSpec.responseSpecification;
 @Tags(value = {@Tag("web"), @Tag("api")})
 @Epic("web")
 @Label("Rest")
-@DisplayName("Альфабанк тесты Rest api:")
+@DisplayName("Альфабанк тесты Rest api")
 public class ApiSecuresTests {
 
     @Test
@@ -48,7 +48,7 @@ public class ApiSecuresTests {
     @Tags(value = {@Tag("regress"), @Tag("smoke")})
     @Story("Операции с шаблонами")
     @Feature("Негативный сценарии")
-    @DisplayName("Запрос на получение данных из шаблона без аутентификации")
+    @DisplayName("Получение данных из шаблона без аутентификации")
     void getTemplatesSecureTest() {
 
         Allure.step("Отправляем запрос и проверяем ответ", () -> {
