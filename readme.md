@@ -8,7 +8,9 @@
 + [Стек технологий](#стек-технологий)
 + [Запуск тестов](#Запуск-тестов)
 + [Сборка в Jenkins](#jenkins-job)
-+ [Allure отчеты](#Allure-отчеты)
++ [Allure отчеты:](#Allure-отчеты)
+  + [Allure report:](#-report)
+  + [Allure test ops:](#-TestOps)
 + [Уведомление в Telegram](#telegram-уведомления)
 + [Интеграция с Jira](#Jira-интеграция)
 + [Видео прохождения тестов](#selenoid-видеозапись-тестов)
@@ -112,7 +114,7 @@ gradle clean apiTest
 
 [Вернуться к оглавлению](#Содержание)
 
-### <img src="/images/logos/Allure_TO.svg" width="25" height="25"  alt="Allure TestOps"/>Отчет в Allure</a> <a target="_blank" href="https://allure.autotests.cloud/jobrun/19967"> TestOps</a>
+### <img src="/images/logos/Allure_TO.svg" width="25" height="25"  alt="Allure TestOps"/>Отчет в Allure</a> <a target="_blank" href="https://allure.autotests.cloud/jobrun/20210"> TestOps</a>
 #### Основной отчет
 <p align="center">
 <img title="Allure Overview Dashboard" src="/images/screens/overviewOps.jpg">
@@ -130,7 +132,7 @@ gradle clean apiTest
 
 [Вернуться к оглавлению](#Содержание)
 
-## :bookmark: <img src="/images/logos/Telegram.svg" width="25" height="25"  alt="Telegram"/>Telegram уведомления</a>
+## <img src="/images/logos/Telegram.svg" width="25" height="25"  alt="Telegram"/>Telegram уведомления</a>
 После завершения сборки специальный бот, созданный в Telegram, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне.
 <p align="center">
 <img title="Allure Overview Dashboard" src="/images/screens/telegram.jpg">
@@ -138,14 +140,14 @@ gradle clean apiTest
 
 [Вернуться к оглавлению](#Содержание)
 
-## :bookmark: <img src="/images/logos/Jira.svg" width="25" height="25" alt="Jira"/>Jira интеграция</a>
+## <img src="/images/logos/Jira.svg" width="25" height="25" alt="Jira"/>Jira интеграция</a>
 <p align="center">
   <img title="Allure TestOps overview" src="/images/screens/jira.jpg">
 </p>
 
 [Вернуться к оглавлению](#Содержание)
 
-## :bookmark: <img src="/images/logos/Selenoid.svg" width="25" height="25" alt="Selenoid"/>Selenoid видеозапись тестов</a>
+## <img src="/images/logos/Selenoid.svg" width="25" height="25" alt="Selenoid"/>Selenoid видеозапись тестов</a>
 ### Видео запись прохождения тестов
 <p align="center">
   <img title="Selenoid video for test4" src="/images/gif/videoWeb.gif">
