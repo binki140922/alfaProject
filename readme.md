@@ -1,6 +1,7 @@
-# <a href="https://alfabank.ru/"><img src="/images/logos/AlfaLogo.png" width="25" height="25"  alt="IDEA"/></a> Проект по автоматизации тестирования веб для Альфа-Банк
-
-<a target="_blank" href="https://alfabank.ru/">Веб сайт Альфа-Банк</a>
+<h2 align="center"> Проект по автоматизации тестирования для Альфа-Банк</h2>
+<p  align="center">
+<a href="https://alfabank.ru/"><img src="./images/logos/alfabank.png" width="950"></a>
+</p>
 
 ## Содержание
 - [Стек технологий](#bookmark-стек-технологий)
@@ -19,7 +20,10 @@
 <a href="https://github.com/"><img src="/images/logos/Github.svg" width="50" height="50"  alt="Github"/></a>
 <a href="https://junit.org/junit5/"><img src="/images/logos/JUnit5.svg" width="50" height="50"  alt="JUnit5"/></a>
 <a href="https://gradle.org/"><img src="/images/logos/Gradle.svg" width="50" height="50"  alt="Gradle"/></a>
+<a href="https://appium.io/"><img src="/images/logos/appium.svg" width="50" height="50"  alt="appium"/></a>
+<a href="https://selenide.org/"><img src="/images/logos/rest-assured-logo.svg" width="50" height="50"  alt="rest-assured"/></a>
 <a href="https://selenide.org/"><img src="/images/logos/Selenide.svg" width="50" height="50"  alt="Selenide"/></a>
+<a href="https://www.browserstack.com//"><img src="/images/logos/browserstack.svg" width="50" height="50"  alt="browserstack"/></a>
 <a href="https://aerokube.com/selenoid/"><img src="/images/logos/Selenoid.svg" width="50" height="50"  alt="Selenoid"/></a>
 <a href="https://github.com/allure-framework/allure2"><img src="/images/logos/Allure.svg" width="50" height="50"  alt="Allure"/></a>
 <a href="https://www.jenkins.io/"><img src="/images/logos/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>
