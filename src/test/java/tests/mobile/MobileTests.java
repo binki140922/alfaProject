@@ -37,7 +37,7 @@ public class MobileTests extends BaseTest {
     @DisplayName("Ввод нового НТ")
     public void numberSetTest() {
 
-        mobileSteps.setPhoneNumber("9999999999")
+        mobileSteps.setPhoneNumber("9009009091")
                 .clickButtonLogin()
                 .checkLayout("Вот что обычно берут новички \uD83D\uDC47");
     }
@@ -49,7 +49,7 @@ public class MobileTests extends BaseTest {
     @DisplayName("Переход на описание карты")
     public void clickToCardFormTest() {
 
-        mobileSteps.setPhoneNumber("9999999999")
+        mobileSteps.setPhoneNumber("9009009091")
                 .clickButtonLogin()
                 .clickBlockCard()
                 .checkLayout("Бесплатная дебетовая Альфа‑Карта");
@@ -62,7 +62,7 @@ public class MobileTests extends BaseTest {
     @DisplayName("Переход на оформление карты")
     public void clickToCardFormButtonTest() {
 
-        mobileSteps.setPhoneNumber("9999999999")
+        mobileSteps.setPhoneNumber("9009009091")
                 .clickButtonLogin()
                 .clickButtonBlockCard()
                 .checkLayout("Представьтесь, пожалуйста! Пишите как в паспорте ✍️");
