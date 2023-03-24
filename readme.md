@@ -99,7 +99,7 @@ gradle clean apiTest
 [Вернуться к оглавлению](#Содержание)
 
 ## <img src="/images/logos/report.png" width="25" height="25"  alt="report"/>Allure отчеты:
-### <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure"/>Отчет в Allure</a> <a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_fast/allure/"> report</a>
+### <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure"/>Отчет в Allure</a> <a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_alfa/10/"> report</a>
 #### Основной отчет
 <p align="center">
 <img title="Allure Overview Dashboard" src="/images/screens/overviewReport.jpg">
@@ -131,7 +131,7 @@ gradle clean apiTest
 [Вернуться к оглавлению](#Содержание)
 
 ## :bookmark: <img src="/images/logos/Telegram.svg" width="25" height="25"  alt="Telegram"/>Telegram уведомления</a>
-
+После завершения сборки специальный бот, созданный в Telegram, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне.
 <p align="center">
 <img title="Allure Overview Dashboard" src="/images/screens/telegram.jpg">
 </p>
