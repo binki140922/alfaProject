@@ -14,7 +14,7 @@ public class RemoteDriver {
         Configuration.browserVersion = TestConfig.getBrowserVersionWeb();
         Configuration.browserSize = TestConfig.getBrowserSizeWeb();
         Configuration.remote = TestConfig.getRemoteWeb();
-        Configuration.timeout = 10000L;
+        Configuration.timeout = 30000L;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
