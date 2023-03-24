@@ -9,8 +9,8 @@
 + [Запуск тестов](#Запуск-тестов)
 + [Сборка в Jenkins](#jenkins-job)
 + [Allure отчеты:](#Allure-отчеты)
-  + [1. Allure report](#1.-Отчет-в-Allure)
-  + [2. Allure test ops](#2.-Отчет-в-Allure)
+  + [Allure report:](#report)
+  + [Allure test ops:](#TestOps)
 + [Уведомление в Telegram](#telegram-уведомления)
 + [Интеграция с Jira](#Jira-интеграция)
 + [Видео прохождения тестов](#selenoid-видеозапись-тестов)
@@ -101,7 +101,7 @@ gradle clean apiTest
 [Вернуться к оглавлению](#Содержание)
 
 ## <img src="/images/logos/report.png" width="25" height="25"  alt="report"/>Allure отчеты:
-### <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure"/>1. Отчет в Allure</a> <a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_alfa/10/"> report</a>
+### <a name="report"></a><img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure"/>Отчет в Allure</a> <a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_alfa/10/"> report</a>
 #### Основной отчет
 <p align="center">
 <img title="Allure Overview Dashboard" src="/images/screens/overviewReport.jpg">
@@ -114,7 +114,7 @@ gradle clean apiTest
 
 [Вернуться к оглавлению](#Содержание)
 
-### <img src="/images/logos/Allure_TO.svg" width="25" height="25"  alt="Allure TestOps"/>2. Отчет в Allure</a> <a target="_blank" href="https://allure.autotests.cloud/jobrun/20210"> TestOps</a>
+### <a name="TestOps"></a><img src="/images/logos/Allure_TO.svg" width="25" height="25"  alt="Allure TestOps"/>Отчет в Allure</a> <a target="_blank" href="https://allure.autotests.cloud/jobrun/20210"> TestOps</a>
 #### Основной отчет
 <p align="center">
 <img title="Allure Overview Dashboard" src="/images/screens/overviewOps.jpg">
