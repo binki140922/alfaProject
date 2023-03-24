@@ -22,11 +22,12 @@ public class MainPageWebTest extends BaseTest {
 
     private final MainPage mainPage = new MainPage();
 
-    @ParameterizedTest(name = "Проверка редиректа хедера - {0}")
+    @ParameterizedTest
     @Tags(value = {@Tag("regress"), @Tag("sanity")})
     @Story("Проверка переходов")
     @Feature("Позитивный сценарии")
     @EnumSource(value = HeaderDLData.class, mode = EnumSource.Mode.INCLUDE)
+    @DisplayName("Проверка редиректа хедеров главной страницы")
     public void checkHeaderDesktopLayout(HeaderDLData data) {
 
         mainPage.openMainPage()
