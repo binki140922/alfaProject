@@ -5,13 +5,13 @@
 
 ## <a name="Содержание">Содержание</a>
 + [Описание](#Описание)
-+ [Стек технологий](##стек-технологий)
-+ [Запуск-тестов](##Запуск-тестов)
-+ [Сборка в Jenkins](##jenkins-job)
-+ [Allure отчеты](##Allure-отчеты)
-+ [Уведомление в Telegram](##telegram-уведомления)
-+ [Интеграция с Jira](##Jira-интеграция)
-+ [Видео прохождения тестов](##selenoid-видеозапись-тестов)
++ [Стек технологий](#стек-технологий)
++ [Запуск тестов](#Запуск-тестов)
++ [Сборка в Jenkins](#jenkins-job)
++ [Allure отчеты](#Allure-отчеты)
++ [Уведомление в Telegram](#telegram-уведомления)
++ [Интеграция с Jira](#Jira-интеграция)
++ [Видео прохождения тестов](#selenoid-видеозапись-тестов)
 
 ## <a name="Описание">Описание</a>
 Тестовый проект состоит из веб-тестов (UI), тестов API и мобильных тестов (Android).\
@@ -81,8 +81,7 @@ gradle clean apiTest
 
 [Вернуться к оглавлению](#Содержание)
 
-## :bookmark: <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/>Jenkins</a><a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_fast/"> job</a>
-
+## <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/><a name="Jenkins">Jenkins</a><a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_alfa/"> job</a>
 Параметры сборки в Jenkins:
 
 - <code>BROWSER</code> браузер, по умолчанию chrome
