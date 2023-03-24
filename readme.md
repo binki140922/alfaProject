@@ -28,7 +28,7 @@
 - [x] Интеграция с `Jira`
 
 
-## <a name="Стек технологий">Стек технологий</a>
+## <img src="/images/logos/utils.svg" width="25" height="25"  alt="utils"/><a name="Стек технологий">Стек технологий</a>
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="/images/logos/IDEA.svg" width="50" height="50"  alt="IDEA"/></a>
 <a href="https://www.java.com/"><img src="/images/logos/Java.svg" width="50" height="50"  alt="Java"/></a>
@@ -47,7 +47,7 @@
 <a href="https://web.telegram.org/"><img src="/images/logos/Telegram.svg" width="50" height="50"  alt="Telegram"/></a>
 </p>
 
-## <a name="Запуск тестов">Запуск тестов</a>
+## <img src="/images/logos/terminal.png" width="25" height="25"  alt="terminal"/><a name="Запуск тестов">Запуск тестов</a>
 #### Про конфигурации
 Файлы конфигурации должны находиться по пути:
 ```
