@@ -5,13 +5,13 @@
 
 ## <a name="Содержание">Содержание</a>
 + [Описание](#Описание)
-- [Стек технологий](##стек-технологий)
-- [Запуск из терминала](##Запуск-тестов-из-терминала)
-- [Сборка в Jenkins](##jenkins-job)
-- [Allure отчеты](##Allure-отчеты)
-- [Уведомление в Telegram](##telegram-уведомления)
-- [Интеграция с Jira](##Jira-интеграция)
-- [Видео прохождения тестов](##selenoid-видеозапись-тестов)
++ [Стек технологий](##стек-технологий)
++ [Запуск из терминала](##Запуск-тестов)
++ [Сборка в Jenkins](##jenkins-job)
++ [Allure отчеты](##Allure-отчеты)
++ [Уведомление в Telegram](##telegram-уведомления)
++ [Интеграция с Jira](##Jira-интеграция)
++ [Видео прохождения тестов](##selenoid-видеозапись-тестов)
 
 ## <a name="Описание">Описание</a>
 Тестовый проект состоит из веб-тестов (UI), тестов API и мобильных тестов (Android).\
@@ -28,7 +28,7 @@
 - [x] Интеграция с `Jira`
 
 
-## :bookmark: Стек технологий
+## <a name="Описание">Стек технологий</a>
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="/images/logos/IDEA.svg" width="50" height="50"  alt="IDEA"/></a>
 <a href="https://www.java.com/"><img src="/images/logos/Java.svg" width="50" height="50"  alt="Java"/></a>
@@ -47,15 +47,40 @@
 <a href="https://web.telegram.org/"><img src="/images/logos/Telegram.svg" width="50" height="50"  alt="Telegram"/></a>
 </p>
 
-## :bookmark: Запуск тестов из терминала
-Локальный запуск:
+## <a name="Описание">Запуск тестов</a>
+#### Про конфигурации
+Файлы конфигурации должны находиться по пути:
 ```
-gradle clean test
+src/test/resources
 ```
-Удаленный запуск:
+Креды вынесены в отдельный конфиг файл - `credential.properties`
+Ожидаемые конфиги прописаны у соответсвующих команд.
+
+#### Команды запуска тестов на различных платформах
+Mobile тесты (android):
+emulationTest - используется эмулятор, `local.properties`
+realTest - используется реальное устройство, `real.properties`
+browserstackTest - используется сервис browserstack, `browserstack.properties`
 ```
-clean selenideTest
+gradle clean emulationTest
+gradle clean realTest
+gradle clean browserstackTest
 ```
+Веб тесты:
+localTest - используется эмулятор, `local.properties`
+selenideTest - используется реальное устройство, `selenide.properties`
+```
+gradle clean localTest
+gradle clean selenideTest
+```
+API тесты:
+apiTest - используется эмулятор, `api.properties`
+```
+gradle clean apiTest
+```
+
+[Вернуться к оглавлению ⬆](#Содержание)
+
 ## :bookmark: <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/>Jenkins</a><a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_fast/"> job</a>
 
 Параметры сборки в Jenkins:
@@ -65,6 +90,8 @@ clean selenideTest
 - <code>RESOLUTION</code> размер окна браузера, по умолчанию 800x600
 - <code>REMOTE_URL</code> адрес удаленного сервера
 - <code>REMOTE_URL_VIDEO</code> адрес удаленного сервера
+
+[Вернуться к оглавлению ⬆](#Содержание)
 
 ## :bookmark: Allure отчеты:
 ### <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure"/>Отчет в Allure</a> <a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_fast/allure/"> report</a>
@@ -77,6 +104,8 @@ clean selenideTest
 <p align="center">
 <img title="Allure Suites" src="/images/screens/testsReport.jpg">
 </p>
+
+[Вернуться к оглавлению ⬆](#Содержание)
 
 ### <img src="/images/logos/Allure_TO.svg" width="25" height="25"  alt="Allure TestOps"/>Отчет в Allure</a> <a target="_blank" href="https://allure.autotests.cloud/jobrun/19967"> TestOps</a>
 #### Основной отчет
@@ -94,19 +123,27 @@ clean selenideTest
   <img title="Allure TestOps manual tests" src="/images/screens/manual.jpg">
 </p>
 
+[Вернуться к оглавлению ⬆](#Содержание)
+
 ## :bookmark: <img src="/images/logos/Telegram.svg" width="25" height="25"  alt="Telegram"/>Telegram уведомления</a>
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="/images/screens/telegram.jpg">
 </p>
 
+[Вернуться к оглавлению ⬆](#Содержание)
+
 ## :bookmark: <img src="/images/logos/Jira.svg" width="25" height="25" alt="Jira"/>Jira интеграция</a>
 <p align="center">
   <img title="Allure TestOps overview" src="/images/screens/jira.jpg">
 </p>
+
+[Вернуться к оглавлению ⬆](#Содержание)
 
 ## :bookmark: <img src="/images/logos/Selenoid.svg" width="25" height="25" alt="Selenoid"/>Selenoid видеозапись тестов</a>
 ### Видео запись прохождения тестов
 <p align="center">
   <img title="Selenoid video for test4" src="/images/gif/video.gif">
 </p>
+
+[Вернуться к оглавлению ⬆](#Содержание)
