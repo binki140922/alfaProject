@@ -84,9 +84,15 @@ gradle clean apiTest
 ## <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/><a name="Jenkins">Jenkins</a><a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_alfa/"> job</a>
 Параметры сборки в Jenkins:
 
+- <code>TYPETEST</code> выбор типа тестов, из CI доступны:\
+  - browserstackTest\
+  - selenideTest\
+  - apiTest
+
+#### Доп параметры для команды - selenideTest
 - <code>BROWSER</code> браузер, по умолчанию chrome
 - <code>VERSION</code> версия браузера, по умолчанию 100.0
-- <code>RESOLUTION</code> размер окна браузера, по умолчанию 800x600
+- <code>RESOLUTION</code> размер окна браузера, по умолчанию 1280x720
 - <code>REMOTE_URL</code> адрес удаленного сервера
 - <code>REMOTE_URL_VIDEO</code> адрес удаленного сервера
 
