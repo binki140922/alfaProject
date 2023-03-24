@@ -43,8 +43,8 @@ public class MainPageWebTest extends BaseTest {
     public void checkButtonAlfaOnline() {
 
         mainPage.openMainPage()
-                .findAndClickText("Альфа-Онлайн")
-                .checkVisibleElement("войти в Альфа-Онлайн?");
+                .findAndClickText("АЛЬФА-ОНЛАЙН")
+                .checkVisibleElement("в Альфа-Онлайн");
     }
     
     @Test
