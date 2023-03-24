@@ -6,7 +6,7 @@
 ## <a name="Содержание">Содержание</a>
 + [Описание](#Описание)
 + [Стек технологий](##стек-технологий)
-+ [Запуск из терминала](##Запуск-тестов)
++ [Запуск-тестов](##Запуск-тестов)
 + [Сборка в Jenkins](##jenkins-job)
 + [Allure отчеты](##Allure-отчеты)
 + [Уведомление в Telegram](##telegram-уведомления)
@@ -28,7 +28,7 @@
 - [x] Интеграция с `Jira`
 
 
-## <a name="Описание">Стек технологий</a>
+## <a name="Стек технологий">Стек технологий</a>
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="/images/logos/IDEA.svg" width="50" height="50"  alt="IDEA"/></a>
 <a href="https://www.java.com/"><img src="/images/logos/Java.svg" width="50" height="50"  alt="Java"/></a>
@@ -47,20 +47,20 @@
 <a href="https://web.telegram.org/"><img src="/images/logos/Telegram.svg" width="50" height="50"  alt="Telegram"/></a>
 </p>
 
-## <a name="Описание">Запуск тестов</a>
+## <a name="Запуск тестов">Запуск тестов</a>
 #### Про конфигурации
 Файлы конфигурации должны находиться по пути:
 ```
 src/test/resources
 ```
 Креды вынесены в отдельный конфиг файл - `credential.properties`\
-Ожидаемые конфиги прописаны у соответсвующих команд.\
+Ожидаемые конфиги прописаны у соответсвующих команд.
 
 #### Команды запуска тестов на различных платформах
 Mobile тесты (android):\
 emulationTest - используется эмулятор, `local.properties`\
 realTest - используется реальное устройство, `real.properties`\
-browserstackTest - используется сервис browserstack, `browserstack.properties`\
+browserstackTest - используется сервис browserstack, `browserstack.properties`
 ```
 gradle clean emulationTest
 gradle clean realTest
@@ -68,18 +68,18 @@ gradle clean browserstackTest
 ```
 Веб тесты:\
 localTest - используется эмулятор, `local.properties`\
-selenideTest - используется реальное устройство, `selenide.properties`\
+selenideTest - используется реальное устройство, `selenide.properties`
 ```
 gradle clean localTest
 gradle clean selenideTest
 ```
 API тесты:\
-apiTest - используется эмулятор, `api.properties`\
+apiTest - используется эмулятор, `api.properties`
 ```
 gradle clean apiTest
 ```
 
-[Вернуться к оглавлению ⬆](#Содержание)
+[Вернуться к оглавлению](#Содержание)
 
 ## :bookmark: <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/>Jenkins</a><a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_fast/"> job</a>
 
@@ -91,7 +91,7 @@ gradle clean apiTest
 - <code>REMOTE_URL</code> адрес удаленного сервера
 - <code>REMOTE_URL_VIDEO</code> адрес удаленного сервера
 
-[Вернуться к оглавлению ⬆](#Содержание)
+[Вернуться к оглавлению](#Содержание)
 
 ## :bookmark: Allure отчеты:
 ### <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure"/>Отчет в Allure</a> <a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_fast/allure/"> report</a>
@@ -105,7 +105,7 @@ gradle clean apiTest
 <img title="Allure Suites" src="/images/screens/testsReport.jpg">
 </p>
 
-[Вернуться к оглавлению ⬆](#Содержание)
+[Вернуться к оглавлению](#Содержание)
 
 ### <img src="/images/logos/Allure_TO.svg" width="25" height="25"  alt="Allure TestOps"/>Отчет в Allure</a> <a target="_blank" href="https://allure.autotests.cloud/jobrun/19967"> TestOps</a>
 #### Основной отчет
@@ -123,7 +123,7 @@ gradle clean apiTest
   <img title="Allure TestOps manual tests" src="/images/screens/manual.jpg">
 </p>
 
-[Вернуться к оглавлению ⬆](#Содержание)
+[Вернуться к оглавлению](#Содержание)
 
 ## :bookmark: <img src="/images/logos/Telegram.svg" width="25" height="25"  alt="Telegram"/>Telegram уведомления</a>
 
@@ -131,14 +131,14 @@ gradle clean apiTest
 <img title="Allure Overview Dashboard" src="/images/screens/telegram.jpg">
 </p>
 
-[Вернуться к оглавлению ⬆](#Содержание)
+[Вернуться к оглавлению](#Содержание)
 
 ## :bookmark: <img src="/images/logos/Jira.svg" width="25" height="25" alt="Jira"/>Jira интеграция</a>
 <p align="center">
   <img title="Allure TestOps overview" src="/images/screens/jira.jpg">
 </p>
 
-[Вернуться к оглавлению ⬆](#Содержание)
+[Вернуться к оглавлению](#Содержание)
 
 ## :bookmark: <img src="/images/logos/Selenoid.svg" width="25" height="25" alt="Selenoid"/>Selenoid видеозапись тестов</a>
 ### Видео запись прохождения тестов
@@ -146,4 +146,4 @@ gradle clean apiTest
   <img title="Selenoid video for test4" src="/images/gif/video.gif">
 </p>
 
-[Вернуться к оглавлению ⬆](#Содержание)
+[Вернуться к оглавлению](#Содержание)
