@@ -58,37 +58,30 @@ tasks.withType(Test) {
 
 tasks.register('localTest', Test) {
     System.setProperty("env", "local")
-    System.setProperty("sys", "web")
     systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags("front")
-        exclude("api")
     }
 }
 
 tasks.register('selenideTest', Test) {
     System.setProperty("env", "selenide")
-    System.setProperty("sys", "web")
     systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags("front")
-        exclude("api")
     }
 }
 
 tasks.register('apiTest', Test) {
     System.setProperty("env", "api")
-    System.setProperty("sys", "web")
     systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags("api")
-        exclude("front")
     }
 }
 
 tasks.register('emulationTest', Test) {
     System.setProperty("env", "emulation")
-    System.setProperty("sys", "mobile")
     systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags("mobile")
@@ -96,7 +89,6 @@ tasks.register('emulationTest', Test) {
 }
 tasks.register('browserstackTest', Test) {
     System.setProperty("env", "browserstack")
-    System.setProperty("sys", "mobile")
     systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags("mobile")
@@ -104,7 +96,6 @@ tasks.register('browserstackTest', Test) {
 }
 tasks.register('realTest', Test) {
     System.setProperty("env", "real")
-    System.setProperty("sys", "mobile")
     systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags("mobile")

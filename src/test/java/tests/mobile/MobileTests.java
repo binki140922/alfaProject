@@ -8,19 +8,19 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-import settings.basetest.BaseTest;
-import settings.mobilesteps.MobileSteps;
+import basetest.BaseTestMobile;
+import mobilesteps.MobileSteps;
 
 @Tag("mobile")
 @Epic("mobile")
 @Label("android")
 @DisplayName("Альфабанк тесты android приложения")
-public class MobileTests extends BaseTest {
+public class MobileTests extends BaseTestMobile {
 
     private final MobileSteps mobileSteps = new MobileSteps();
 
     @Test
-    @Tags(value = {@Tag("regress"), @Tag("smoke")})
+    @Tags(value = {@Tag("functional"), @Tag("smoke")})
     @Story("Не зарегистрированный пользователь")
     @Feature("Негативный сценарии")
     @DisplayName("Ввод пустого НТ")
@@ -31,7 +31,7 @@ public class MobileTests extends BaseTest {
     }
 
     @Test
-    @Tags(value = {@Tag("regress"), @Tag("sanity")})
+    @Tags(value = {@Tag("functional"), @Tag("sanity")})
     @Story("Не зарегистрированный пользователь")
     @Feature("Позитивный сценарии")
     @DisplayName("Ввод нового НТ")
@@ -43,7 +43,7 @@ public class MobileTests extends BaseTest {
     }
 
     @Test
-    @Tags(value = {@Tag("regress"), @Tag("sanity")})
+    @Tags(value = {@Tag("functional"), @Tag("sanity")})
     @Story("Не зарегистрированный пользователь")
     @Feature("Позитивный сценарии")
     @DisplayName("Переход на описание карты")
@@ -56,7 +56,7 @@ public class MobileTests extends BaseTest {
     }
 
     @Test
-    @Tags(value = {@Tag("regress"), @Tag("sanity")})
+    @Tags(value = {@Tag("functional"), @Tag("sanity")})
     @Story("Не зарегистрированный пользователь")
     @Feature("Позитивный сценарии")
     @DisplayName("Переход на оформление карты")

@@ -1,8 +1,8 @@
 package util;
 
+import basetest.BaseTestMobile;
 import io.restassured.RestAssured;
-import settings.configs.TestConfig;
-import settings.helpers.CustomAllureListener;
+import helpers.CustomAllureListener;
 
 import static java.lang.String.format;
 
@@ -14,7 +14,7 @@ public class BrowserstackUtil {
         return RestAssured.given()
                 .log().all()
                 .filter(CustomAllureListener.withCustomTemplates())
-                .auth().basic(TestConfig.loginMobile, TestConfig.userPasswordMobile)
+                .auth().basic(BaseTestMobile.loginMobile, BaseTestMobile.userPasswordMobile)
                 .when()
                 .get(url)
                 .then()
