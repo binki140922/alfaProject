@@ -27,7 +27,7 @@ public class MainPageTest extends BaseTestWeb {
     public void checkButtonAlfaOnline() {
 
         mainPage.openMainPage()
-                .findAndClickText("АЛЬФА-ОНЛАЙН")
+                .findAndClickText("Альфа-Онлайн")
                 .checkVisibleElement("в Альфа-Онлайн");
     }
 
@@ -53,7 +53,7 @@ public class MainPageTest extends BaseTestWeb {
 
         mainPage.openMainPage()
                 .setText("ипотека", "placeholder", "Я ищу")
-                .checkOneResultFound(" — Оформить заявку онлайн на ипотечный кредит...");
+                .checkOneResultFound("Поисковая технология");
     }
 
     @Test

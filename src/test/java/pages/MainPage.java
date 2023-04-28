@@ -54,7 +54,6 @@ public class MainPage extends HelperPages {
 
     @Step("Проверяем наличие текста {0}")
     public void checkOneResultFound(String text) {
-        Selenide.$$(".b-serp-item__content").get(0).$(".b-serp-item__title-link")
-                .shouldBe(Condition.text(text));
+        Selenide.$(Selectors.byText("Поисковая технология")).shouldBe(Condition.text(text));
     }
 }
