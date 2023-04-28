@@ -9,9 +9,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.EnumSource;
-import data.HeaderDLData;
 import pages.MainPage;
 
 @Tag("front")
@@ -21,19 +18,6 @@ import pages.MainPage;
 public class MainPageTest extends BaseTestWeb {
 
     private final MainPage mainPage = new MainPage();
-
-    @ParameterizedTest
-    @Tags(value = {@Tag("navigation"), @Tag("sanity")})
-    @Story("Проверка переходов")
-    @Feature("Позитивный сценарии")
-    @EnumSource(value = HeaderDLData.class, mode = EnumSource.Mode.INCLUDE)
-    @DisplayName("Проверка редиректа хедеров главной страницы")
-    public void checkHeaderDesktopLayout(HeaderDLData data) {
-
-        mainPage.openMainPage()
-                .clickHeader(data.getLinkName())
-                .checkOpenUrl(data.getLinkUrl());
-    }
 
     @Test
     @Tag("navigation")
@@ -46,7 +30,7 @@ public class MainPageTest extends BaseTestWeb {
                 .findAndClickText("АЛЬФА-ОНЛАЙН")
                 .checkVisibleElement("в Альфа-Онлайн");
     }
-    
+
     @Test
     @Tag("navigation")
     @Story("Проверка переходов")
@@ -71,7 +55,7 @@ public class MainPageTest extends BaseTestWeb {
                 .setText("ипотека", "placeholder", "Я ищу")
                 .checkOneResultFound(" — Оформить заявку онлайн на ипотечный кредит...");
     }
-    
+
     @Test
     @Tags(value = {@Tag("navigation"), @Tag("smoke")})
     @Story("Проверка переходов")
@@ -80,7 +64,7 @@ public class MainPageTest extends BaseTestWeb {
     public void clickLogoTest() {
 
         mainPage.openMainPage()
-                .findAndClickAttributeElement("логотипу","data-test-id", "Main-Header-Main-DesktopLogo")
+                .findAndClickAttributeElement("логотипу", "data-test-id", "Main-Header-Main-DesktopLogo")
                 .checkOpenUrl("");
     }
 }

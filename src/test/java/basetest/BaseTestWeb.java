@@ -57,6 +57,8 @@ public class BaseTestWeb {
         Attach.pageSource();
         Attach.browserConsoleLogs();
 
+        Selenide.closeWindow();
+
         if (ENV.equals("selenide")) {
             Attach.addVideo();
         }
