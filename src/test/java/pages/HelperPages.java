@@ -13,5 +13,6 @@ public class HelperPages {
 
     public static void openPage(String url) {
         Selenide.open(url);
+        Selenide.sleep(1500);
     }
 }
