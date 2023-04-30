@@ -5,7 +5,7 @@ import com.codeborne.selenide.WebDriverRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class HelperPages {
+public class HelperPage {
 
     public static void checkUrlPage(String fullUrl) {
         assertThat(WebDriverRunner.url()).isEqualTo(fullUrl);

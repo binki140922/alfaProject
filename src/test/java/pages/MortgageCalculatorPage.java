@@ -9,7 +9,7 @@ import io.qameta.allure.Step;
 import static basetest.BaseTestWeb.WEB_CONFIG;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class MortgageCalculatorPage extends HelperPages {
+public class MortgageCalculatorPage extends HelperPage {
 
     private SelenideElement rootElement;
     private SelenideElement element;

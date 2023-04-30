@@ -8,7 +8,7 @@ import pages.components.HeaderDesktopLayout;
 
 import static basetest.BaseTestWeb.WEB_CONFIG;
 
-public class MainPage extends HelperPages {
+public class MainPage extends HelperPage {
 
     HeaderDesktopLayout headerDesktopLayout = new HeaderDesktopLayout();
 
